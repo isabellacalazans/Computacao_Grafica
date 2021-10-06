@@ -3,23 +3,17 @@
 
 #define PI 3.1415926535
 
-// Função callback chamada para fazer o desenho
-void Desenha(void)
-{
+void Desenha(void) {
      float angle, raio_x, raio_y;
      int i, circle_points = 1000;
      
      glMatrixMode(GL_MODELVIEW);
      glLoadIdentity();
-                   
-     // Limpa a janela de visualização com a cor de fundo especificada
      glClear(GL_COLOR_BUFFER_BIT);
-
-     // Especifica que a cor 
      glColor3f(1.0f, 0, 0);
      glColor3f(0, 1, 0);
      
-     // Especifica o tamanho do pixel
+     // Tamanho do pixel
      glPointSize(1.0);
 
      // Desenha um círculo preenchido 
@@ -37,20 +31,25 @@ void Desenha(void)
      glFlush();
 }
 
-// Inicializa parâmetros de rendering
+//void transladar()
+//    {
+//        object += glm::translate(m_model, glm::vec3(1, 1, 0));
+//    }
+
+
 void Inicializa (void)
 {   
-    // Define a cor de fundo da janela de visualização como preta
+    // Cor de fundo
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
-// Função callback chamada quando o tamanho da janela é alterado 
+// Chama quando o tamanho da janela é alteradoo
 void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 {
                    // Correção divisao por zero
                    if(h == 0) h = 1;
                            
-                   // Especifica as dimensões da Viewport
+                   // Dimensões da Viewport
                    glViewport(0, 0, w, h);
 
                    // Inicializa o sistema de coordenadas
@@ -74,7 +73,7 @@ int main(int argc, char ** argv) {
  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
  glutInitWindowSize(sizex,sizey);
  glutInitWindowPosition(10,10);
- glutCreateWindow("Círculo");
+ glutCreateWindow("ccc");
  glutDisplayFunc(Desenha);
  glutReshapeFunc(AlteraTamanhoJanela);
  Inicializa();
